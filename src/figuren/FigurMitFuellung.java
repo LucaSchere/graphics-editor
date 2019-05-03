@@ -1,8 +1,9 @@
 package figuren;
 
 import java.awt.*;
+import java.io.Serializable;
 
-public abstract class FigurMitFuellung extends FigurMitRahmen {
+public abstract class FigurMitFuellung extends FigurMitRahmen implements Serializable {
     protected Color fuellung;
 
     public FigurMitFuellung(int x, int y, Color rahmen, int staerke, Color fuellung) {
@@ -18,5 +19,10 @@ public abstract class FigurMitFuellung extends FigurMitRahmen {
 
     public void setFuellung(Color fuellung) {
         this.fuellung = fuellung;
+    }
+
+    @Override
+    public String toString(){
+        return super.toString() + "\nfuellung: " + fuellung.toString();
     }
 }

@@ -1,8 +1,11 @@
 package figuren;
 
 import java.awt.*;
+import java.io.Serializable;
 
-public abstract class Figur {
+public abstract class Figur implements Serializable {
+
+    private static final long serialVersionUID = 1L;
     protected int x;
     protected int y;
     protected Figur(int x, int y){
@@ -30,4 +33,9 @@ public abstract class Figur {
         this.setY(this.getY()+deltaY);
     }
     public abstract void zeichne(Graphics2D g);
+
+    @Override
+    public String toString(){
+        return "x:" + x + "\ny: " + y;
+    }
 }

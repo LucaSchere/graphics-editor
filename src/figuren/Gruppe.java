@@ -24,7 +24,9 @@ public class Gruppe extends Figur {
     }
 
     public void zeichne(Graphics2D g){
-
+        for(Figur f : getFiguren()){
+            f.zeichne(g);
+        }
     }
 
     public List<Figur> getFiguren(){

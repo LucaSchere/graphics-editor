@@ -1,8 +1,10 @@
 package figuren;
 
 import java.awt.*;
+import java.io.Serializable;
 
-public class Rechteck extends FigurMitFuellung {
+public class Rechteck extends FigurMitFuellung implements Serializable {
+    private static final long serialVersionUID = 1L;
     private int breite, hoehe;
     public Rechteck(int x, int y, Color rahmen, int staerke, Color fuellung, int breite, int hoehe){
         super(x,y, rahmen, staerke, fuellung);
@@ -34,5 +36,10 @@ public class Rechteck extends FigurMitFuellung {
 
     public void setHoehe(int hoehe) {
         this.hoehe = hoehe;
+    }
+
+    @Override
+    public String toString(){
+        return super.toString() + "\nbreite: "+breite + "\nhoehe: " + hoehe;
     }
 }

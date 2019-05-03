@@ -12,7 +12,7 @@ import javax.swing.JPanel;
  * Die Klasse Display stellt ein Fenster auf dem Bildschirm zur Verfügung, in welchem
  * Figur-Objekte dargestellt werden können.
  * Siehe auch Java-Grundkurs Abschnitt 10.2 und 10.3.
- * 
+ *
  * @author Andres Scheidegger
  */
 @SuppressWarnings("serial")
