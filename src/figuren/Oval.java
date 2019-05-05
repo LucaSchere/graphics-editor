@@ -15,7 +15,7 @@ public class Oval extends FigurMitFuellung {
         g.setColor(this.getFuellung());
         g.fillOval(this.getX(),this.getY(),this.getRadiusH()*2,this.getRadiusV()*2);
         g.setColor(this.getRahmen());
-        g.setStroke(this.getStaerke());
+        g.setStroke(new BasicStroke(this.getStaerke()));
         g.drawOval(this.getX(),this.getY(),this.getRadiusH()*2,this.getRadiusV()*2);
     }
 

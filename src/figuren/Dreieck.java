@@ -15,10 +15,9 @@ public class Dreieck extends FigurMitFuellung {
         g.setColor(this.getFuellung());
         g.fillPolygon(this.getxCoords(), this.getyCoords(), 3);
         g.setColor(this.getRahmen());
-        g.setStroke(this.getStaerke());
+        g.setStroke(new BasicStroke(this.getStaerke()));
         g.drawPolygon(this.getxCoords(), this.getyCoords(), 3);
     }
-
 
     public int[] getxCoords() {
         return xCoords;

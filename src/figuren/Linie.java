@@ -20,7 +20,8 @@ public class Linie extends FigurMitRahmen {
     }
 
     public void zeichne(Graphics2D g){
-        g.setStroke(this.getStaerke());
+        g.setStroke(new BasicStroke(this.getStaerke()));
+        g.setColor(this.getRahmen());
         g.drawLine(this.getX(), this.getY(), this.getX2(), this.getY2());
     }
 

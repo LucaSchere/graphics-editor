@@ -10,12 +10,14 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.List;
 
 public class Parser {
 
-    public static void speichern(Figur f){
+
+    public static void speichern(List<Figur> f){
         try {
-            FileOutputStream fout = new FileOutputStream(new File("myObjects.txt"));
+            FileOutputStream fout = new FileOutputStream(new File("Zeichnung.txt"));
             ObjectOutputStream o = new ObjectOutputStream(fout);
 
             // Write objects to file
@@ -32,16 +34,16 @@ public class Parser {
             e.printStackTrace();
         }
     }
-    public static Rechteck lade(){
+    public static List<Figur> laden(){
 
-        Rechteck r = null;
+        List<Figur> r = null;
 
         try {
 
-            FileInputStream fi = new FileInputStream(new File("myObjects.txt"));
+            FileInputStream fi = new FileInputStream(new File("Zeichnung.txt"));
             ObjectInputStream oi = new ObjectInputStream(fi);
             // Read objects
-            r = (Rechteck) oi.readObject();
+            r = (List<Figur>) oi.readObject();
 
 
 
@@ -53,7 +55,6 @@ public class Parser {
         } catch (IOException e) {
             System.out.println("Error initializing stream");
         } catch (ClassNotFoundException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return r;

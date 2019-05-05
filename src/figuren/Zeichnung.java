@@ -2,6 +2,7 @@ package figuren;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Zeichnung {
@@ -9,6 +10,9 @@ public class Zeichnung {
 
     public Zeichnung(List<Figur> figuren){
         this.figuren = figuren;
+    }
+    public Zeichnung(){
+        this.figuren = new ArrayList<>();
     }
     /**
      * Fügt eine weitere Figur hinzu und löst die Auffrischung des Fensterinhaltes aus.

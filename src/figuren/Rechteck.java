@@ -18,7 +18,7 @@ public class Rechteck extends FigurMitFuellung implements Serializable {
         g.setColor(this.getFuellung());
         g.fillRect(this.getX(),this.getY(),this.getBreite(), this.getHoehe());
         g.setColor(this.getRahmen());
-        g.setStroke(this.getStaerke());
+        g.setStroke(new BasicStroke(this.getStaerke()));
         g.drawRect(this.getX(), this.getY(), this.getBreite(), this.getHoehe());
     }
 

@@ -3,13 +3,12 @@ package figuren;
 import java.awt.*;
 
 public class Text extends Figur{
-    private String string;
-    private Font font;
+    private String string = "Text";
+    private Font font = new Font("TimesRoman", Font.PLAIN, 20);
 
-    public Text(int x, int y, String string, String fontName, int fontStyle, int fontSize) {
+    public Text(int x, int y, String string) {
         super(x, y);
         this.string = string;
-        this.font = new Font(fontName, fontStyle, fontSize );
     }
 
     public void zeichne(Graphics2D g){
