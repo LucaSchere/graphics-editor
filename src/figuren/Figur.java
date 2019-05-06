@@ -34,6 +34,7 @@ public abstract class Figur implements Serializable {
     }
     public abstract void zeichne(Graphics2D g);
 
+
     @Override
     public String toString(){
         return "x:" + x + "\ny: " + y;

@@ -1,6 +1,7 @@
 package display;
 
 import control.EditorControl;
+import control.FigurMouseAdapter;
 
 import java.awt.Graphics;
 import java.awt.event.MouseAdapter;
@@ -15,19 +16,7 @@ public final class EditorPanel extends JPanel {
 
   EditorPanel(EditorControl control) {
     editorControl = control;
-    addMouseListener(new MouseAdapter() {
-
-      @Override
-      public void mousePressed(MouseEvent e) {
-        editorControl.setErsterPunkt(e.getPoint());
-      }
-
-      @Override
-      public void mouseReleased(MouseEvent e) {
-        editorControl.erzeugeFigurMitZweitemPunkt(e.getPoint());
-        repaint();
-      }
-    });
+    addMouseListener(new FigurMouseAdapter(this.editorControl, this));
   }
 
   // Die paintComponent()-Methode wird automatisch aufgerufen, wenn irgendwer die repaint()-

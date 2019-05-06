@@ -32,4 +32,6 @@ public class Gruppe extends Figur {
     public List<Figur> getFiguren(){
         return this.figuren;
     }
+
+
 }
