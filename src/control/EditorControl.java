@@ -1,6 +1,8 @@
 package control;
 
+import display.EditorFrame;
 import figuren.*;
+import load_save.Parser;
 
 import java.awt.*;
 
@@ -8,6 +10,11 @@ public class EditorControl {
   private Zeichnung zeichnung = new Zeichnung();
   private char figurTyp = 'l';
   private Color farbeRahmen = new Color(0,0,0,255);
+  private EditorFrame ef;
+
+  public EditorControl(EditorFrame ef){
+    this.ef = ef;
+  }
 
   public Color getFarbeRahmen() {
     return farbeRahmen;
@@ -41,6 +48,10 @@ public class EditorControl {
 
   public void allesNeuZeichnen(Graphics g) {
         zeichnung.zeichneFiguren(g);
+  }
+  public void allesLoeschen(){
+    zeichnung.allesLoeschen();
+    ef.repaint();
   }
 
   public void setFigurTyp(char figurTyp) {

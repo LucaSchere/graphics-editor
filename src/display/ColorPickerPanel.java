@@ -8,6 +8,8 @@ import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class ColorPickerPanel extends JPanel {
 
@@ -18,6 +20,8 @@ public class ColorPickerPanel extends JPanel {
     private ColorSlider redF = new ColorSlider(0, 255);
     private ColorSlider greenF = new ColorSlider(0, 255);
     private ColorSlider blueF = new ColorSlider(0,255);
+
+    private JButton clear = new JButton();
 
     private int breite;
     private int hoehe;
@@ -73,10 +77,20 @@ public class ColorPickerPanel extends JPanel {
         });
 
 
+        clear.setPreferredSize(new Dimension(20,20));
+        clear.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ec.allesLoeschen();
+
+            }
+        });
+
         add(redR);
         add(greenR);
         add(blueR);
         add(staerke);
+        add(clear);
         add(redF);
         add(greenF);
         add(blueF);
