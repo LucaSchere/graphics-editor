@@ -4,6 +4,12 @@ import display.*;
 
 public final class Grafikeditor {
 
+  public final static int EDITOR_BREITE = 800;
+  public final static int EDITOR_HOEHE = 800;
+  public final static int PICKER_BREITE = 500;
+  public final static int PICKER_HOEHE = 300;
+
+
   public static void main(String[] args) {
     new Grafikeditor();
 
@@ -31,6 +37,6 @@ public final class Grafikeditor {
 
   private Grafikeditor() {
     @SuppressWarnings("unused")
-    EditorFrame frame = new EditorFrame(800, 600);
+    EditorFrame frame = new EditorFrame(EDITOR_BREITE, EDITOR_HOEHE, PICKER_BREITE, PICKER_HOEHE);
   }
 }

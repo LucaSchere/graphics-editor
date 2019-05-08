@@ -25,6 +25,8 @@ public class Linie extends FigurMitRahmen {
         g.drawLine(this.getX(), this.getY(), this.getX2(), this.getY2());
     }
 
+
+
     public int getX2() {
         return x2;
     }

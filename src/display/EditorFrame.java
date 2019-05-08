@@ -1,51 +1,29 @@
 package display;
 
 import control.EditorControl;
-import figuren.Zeichnung;
+import control.FigurKeyAdapter;
 
 import java.awt.Dimension;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
+
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
 public class EditorFrame extends JFrame {
-  private EditorControl editorControl = new EditorControl();
+  private EditorControl editorControl = new EditorControl(this);
 
 
 
-  public EditorFrame(int breite, int hoehe) {
+  public EditorFrame(int breite, int hoehe, int pickerBreite, int pickerHoehe) {
     erzeugeUndSetzeEditorPanel();
     fensterEinmitten(breite, hoehe);
     setDefaultCloseOperation(EXIT_ON_CLOSE);
     setVisible(true);
-    addKeyListener(new KeyAdapter() {
-        @Override
-        public void keyTyped(KeyEvent e) {
-            super.keyTyped(e);
-            switch (e.getKeyChar()){
-                case 'r':
-                    editorControl.setFigurTyp('r');
-                    break;
-                case 'd':
-                    editorControl.setFigurTyp('d');
-                    break;
-                case 'o':
-                    editorControl.setFigurTyp('o');
-                    break;
-                case 'l':
-                    editorControl.setFigurTyp('l');
-                    break;
-                case 't':
-                    editorControl.setFigurTyp('t');
-                    break;
-            }
-        }
-    });
+    addKeyListener(new FigurKeyAdapter(editorControl));
+    new ColorPickerFrame(editorControl, breite, hoehe, pickerBreite, pickerHoehe);
   }
 
   private void erzeugeUndSetzeEditorPanel() {

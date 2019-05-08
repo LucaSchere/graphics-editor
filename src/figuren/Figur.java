@@ -31,11 +31,14 @@ public abstract class Figur implements Serializable {
     public void move(int deltaX, int deltaY){
         this.setX(this.getX()+deltaX);
         this.setY(this.getY()+deltaY);
+
     }
     public abstract void zeichne(Graphics2D g);
+
 
     @Override
     public String toString(){
         return "x:" + x + "\ny: " + y;
     }
+
 }

@@ -1,5 +1,7 @@
 package figuren;
 
+import load_save.Parser;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
@@ -13,6 +15,7 @@ public class Zeichnung {
     }
     public Zeichnung(){
         this.figuren = new ArrayList<>();
+        this.figuren = Parser.laden();
     }
     /**
      * Fügt eine weitere Figur hinzu und löst die Auffrischung des Fensterinhaltes aus.
@@ -20,6 +23,7 @@ public class Zeichnung {
      */
     public void hinzufuegen(Figur figur) {
         figuren.add(figur);
+        Parser.speichern(this.figuren);
     }
     /**
      * Zeichnet alle Figuren.
@@ -36,5 +40,6 @@ public class Zeichnung {
      */
     public void allesLoeschen() {
         figuren.clear();
+
     }
 }

@@ -21,6 +21,7 @@ public abstract class FigurMitFuellung extends FigurMitRahmen implements Seriali
         this.fuellung = fuellung;
     }
 
+
     @Override
     public String toString(){
         return super.toString() + "\nfuellung: " + fuellung.toString();
