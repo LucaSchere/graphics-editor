@@ -7,9 +7,9 @@ import java.awt.*;
 public class EditorControl {
   private Zeichnung zeichnung = new Zeichnung();
   private char figurTyp = 'l';
-  private Color farbeRahmen = new Color(0,0,0,255);
-  private Color farbeFuellung = new Color(0,0,0,255);
-  private int staerke = 2;
+  private Color farbeRahmen = new Color(0,0,255,255);
+  private Color farbeFuellung = new Color(255,0,0,255);
+  private int staerke = 6;
 
   private Point ersterPunkt;
 
